@@ -63,21 +63,21 @@ docker build -t bedrock-client-app .
 Pour démarrer un conteneur à partir de l'image construite :
 
 ```bash
-docker run -p 8080:8080 --name bedrock-app bedrock-client-app
+docker run -p 8000:8000 --name bedrock-app bedrock-client-app
 ```
 
-L'application sera accessible à l'adresse `http://localhost:8080`.
+L'application sera accessible à l'adresse `http://localhost:8000`.
 
 Une fois l'application démarrée via Docker, la documentation OpenAPI interactive (Swagger UI) est disponible à l'adresse :
 
-[http://localhost:8080/docs](http://localhost:8080/docs)
+[http://localhost:8000/docs](http://localhost:8000/docs)
 
 Vous pouvez utiliser cette interface pour visualiser et tester les différents endpoints de l'API.
 
 Pour passer les variables d'environnement AWS nécessaires au client Bedrock :
 
 ```bash
-docker run -p 8080:8080 --name bedrock-app \
+docker run -p 8000:8000 --name bedrock-app \
   -e AWS_ACCESS_KEY_ID="your_access_key_id" \
   -e AWS_SECRET_ACCESS_KEY="your_secret_access_key" \
   bedrock-client-app

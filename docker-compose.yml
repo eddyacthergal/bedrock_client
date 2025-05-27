@@ -6,16 +6,11 @@ services:
     image: bedrock-client-app
     container_name: bedrock_client
     ports:
-      - "8080:8080"
+      - "8000:8000"
     environment:
       - AWS_REGION=${AWS_REGION:-eu-central-1} # Valeur par défaut si non fournie dans .env
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-    # env_file:
-    #   - .env
-    volumes:
-      - .:/app # Optionnel: monter le code local pour le développement, peut être retiré pour la production
-
 # Pour utiliser ce fichier docker-compose.yml :
 # 1. Créez un fichier .env à la racine du projet avec vos variables d'environnement :
 #    AWS_REGION=your_aws_region

@@ -19,8 +19,7 @@ async def get_models():
     return client.list_foundation_models()
 
 @router.post("/chat/completions", status_code=status.HTTP_200_OK)
-async def create_chat_completion(request: ChatRequest, streaming: bool = False):
-    model_Id = "anthropic.claude-3-5-sonnet-20240620-v1:0"
+async def create_chat_completion(request: ChatRequest, model_id: str = "anthropic.claude-3-5-sonnet-20240620-v1:0", streaming: bool = False):
     if streaming:
-        return client.invoke_model_with_streaming(model_id=model_Id, request=request)
-    return client.invoke_model(model_id=model_Id, request=request)
+        return client.invoke_model_with_streaming(model_id=model_id, request=request)
+    return client.invoke_model(model_id=model_id, request=request)

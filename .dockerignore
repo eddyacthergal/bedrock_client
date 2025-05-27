@@ -1,0 +1,46 @@
+# Git
+**/.git
+**/.gitignore
+
+# macOS
+**/.DS_Store
+
+# Python
+**/__pycache__/
+**/*.py[cod]  # .pyc, .pyo, .pyd
+**/*.so     # Compiled C extensions
+
+# Virtual environment (uv default)
+**/.venv/
+
+# Distribution / packaging
+**/*.egg-info/
+**/build/
+**/dist/
+**/*.tar.gz
+**/*.zip
+**/*.whl
+
+# Logs
+**/*.log
+**/logs/
+
+# Test outputs
+**/htmlcov/
+**/.pytest_cache/
+**/.tox/
+**/*.cover
+**/.coverage
+**/.coverage.*
+
+# dotenv environment files
+.env
+.env.*
+!.env.example
+!.env.template
+
+# IDE / Editor specific (optional, often better in global .gitignore)
+# .vscode/
+# .idea/
+# **/*.swp
+# **/*.swo

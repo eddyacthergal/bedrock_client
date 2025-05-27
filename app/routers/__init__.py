@@ -1,0 +1,1 @@
+from .bedrock import router as bedrock_router

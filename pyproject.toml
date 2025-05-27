@@ -1,0 +1,39 @@
+[project]
+name = "bedrock"
+version = "v0.0.1"
+description = "Test client for Amazon Bedrock"
+authors = [
+    { name = "eacthergal", email = "eddy.acthergal@ext.europarl.europa.eu" }
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "boto3==1.38.23", # AWS SDK for Python
+    "botocore==1.38.23", # Core functionality for boto3,
+    "fastapi[standard]==0.115.12", # Web framework for building APIs
+]
+
+[build-system]
+requires = ["setuptools>=73.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["client"]
+[tool.setuptools.package-dir]
+client="app/client" # Specifies the source directory for the package
+
+[tool.commitizen]
+name = "cz_conventional_commits" # Uses the conventional commits standard
+tag_format = "v$version" # Customizes the tag format
+version_scheme = "pep440" # Follows the PEP 440 version scheme
+version_provider = "pep621" # Uses standard pep for version management
+update_changelog_on_bump = true # Automatically updates the CHANGELOG when the version is bumped
+
+[dependency-groups]
+commit = [
+    "commitizen>=4.5.0",
+    "pre-commit>=4.2.0",
+]
+
+[tool.uv]
+prerelease = "allow"
